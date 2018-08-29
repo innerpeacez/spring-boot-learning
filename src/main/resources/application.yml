@@ -1,0 +1,9 @@
+com:
+  zhw:
+    name: innerpeacez
+    tilte: spring boot study
+
+spring:
+  profiles:
+    active: dev
+
