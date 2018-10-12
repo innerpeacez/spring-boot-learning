@@ -7,18 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
 
-@RestController("/user")
+@RestController
+@RequestMapping("/user")
 public class UserController {
 
     static final Map<Long, User> users = Collections.synchronizedMap(new HashMap<>());
 
-    @RequestMapping(value = "/" ,method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public List<User> getUsers() {
         List<User> allUsers = new ArrayList<>(users.values());
         return allUsers;
     }
 
-    @RequestMapping(value = "/",method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public String addUser(User user) {
         users.put(user.getId(), user);
         return "success";

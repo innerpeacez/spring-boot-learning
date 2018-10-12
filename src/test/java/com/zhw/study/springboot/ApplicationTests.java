@@ -1,38 +1,36 @@
-//package com.zhw.study.springboot;
-//
-//import com.zhw.study.springboot.properties.SpringbootProperties;
-//import com.zhw.study.springboot.properties.LombokTest;
-//import org.junit.Assert;
-//import org.junit.Test;
-//import org.junit.runner.RunWith;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.test.context.SpringBootTest;
-//import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-//
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@SpringBootTest
-//public class ApplicationTests {
-//
-//	@Test
-//	public void contextLoads() {
-//	}
-//
-//	@Autowired
-//	private SpringbootProperties properties;
-//
-//	@Autowired
-//	private LombokTest ymlProperties;
-//
-//	@Test
-//	public void getHello() throws Exception {
-//		Assert.assertEquals(properties.getName(), "innerpeacez");
-//		Assert.assertEquals(properties.getTitle(), "spring boot study");
-//	}
-//
-//	@Test
-//	public void getYmlProp() {
-//		Assert.assertEquals(ymlProperties.getName(), "innerpeacez");
-//	}
-//
-//
-//}
+package com.zhw.study.springboot;
+
+import com.zhw.study.springboot.restapi.User;
+import com.zhw.study.springboot.restapi.UserController;
+import org.junit.Test;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.ResultActions;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+
+public class ApplicationTests extends MockMvcTest {
+
+    private RequestBuilder request = null;
+
+    private UserController userController = new UserController();
+
+    @Test
+    public void testAddUser() throws Exception {
+
+        request = post("/user")
+                .param("id","1")
+                .param("name","innerpeacez")
+                .param("age","20");
+
+        mvc.perform(request);
+
+
+        request = get("/user/1");
+        mvc.perform(request);
+
+    }
+
+
+
+}
