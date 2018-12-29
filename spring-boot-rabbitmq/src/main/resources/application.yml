@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: rabbitmq-demo
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: innerpeacez
+    password: innerpeacez
