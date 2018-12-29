@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: spring-boot-admin
+  boot:
+    admin:
+      client:
+        instance:
+          prefer-ip: true
+          metadata:
+            user:
+              name: innerpeacez
+              password: innerpeacez
+        url: http://localhost:8080
+  security:
+    user:
+      password: innerpeacez
+      name: innerpeacez
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: '/'
+  endpoint:
+    health:
+      show-details: always
+server:
+  port: 8080
