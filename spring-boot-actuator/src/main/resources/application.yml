@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-boot-actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    shutdown: # 关闭指定的端点
+      enabled: false
