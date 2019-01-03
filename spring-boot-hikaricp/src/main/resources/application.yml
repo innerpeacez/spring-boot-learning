@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/DbName?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5 # 最小链接数
+      maximum-pool-size: 15 # 最大连接数
+      auto-commit: true # 自动提交
+      idle-timeout: 30000 # 最大空闲时间（毫秒）
+      pool-name: DataPoolHikari # 链接池名
+      max-lifetime: 180000 # 最大生命周期（毫秒）
+      connection-timeout: 30000 # 连接超时时间（毫秒）
+      connection-test-query: SELECT 1 # 心跳检测
+
