@@ -39,7 +39,7 @@ public class RequestAndResponseAspect {
     }
 
     @Around("com.zhw.study.springbootaop.config.CommonJoinPointConfiguration.requestAndResponseAspect()")
-    public ResultBean<Object> requestAndResponse(ProceedingJoinPoint joinPoint) throws Throwable {
+    public ResultBean<Object> requestAndResponse(ProceedingJoinPoint joinPoint) {
         long startTime = System.currentTimeMillis();
         try {
             Object proceed = joinPoint.proceed();
