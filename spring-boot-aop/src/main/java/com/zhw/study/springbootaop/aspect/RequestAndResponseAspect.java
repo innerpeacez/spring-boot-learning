@@ -39,15 +39,16 @@ public class RequestAndResponseAspect {
 
     @Around("com.zhw.study.springbootaop.config.CommonJoinPointConfiguration.requestAndResponseAspect()")
     public ResultBean<Object> requestAndResponse(ProceedingJoinPoint joinPoint) throws Throwable {
+        long startTime = System.currentTimeMillis();
         try {
-            // 打印处理时间
-            long startTime = System.currentTimeMillis();
             Object proceed = joinPoint.proceed();
-            long timeTaken = System.currentTimeMillis() - startTime;
-            log.info("Request processing time of {} is {} millisecond", joinPoint, timeTaken);
             return new ResultBean<>(proceed);
         } catch (Throwable e) {
             return new ResultBean<>(e);
+        } finally {
+            // 打印处理时间
+            long timeTaken = System.currentTimeMillis() - startTime;
+            log.info("Request processing time of {} is {} millisecond", joinPoint, timeTaken);
         }
     }
 }
