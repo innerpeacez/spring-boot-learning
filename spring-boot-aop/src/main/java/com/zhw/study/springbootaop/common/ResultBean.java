@@ -5,6 +5,7 @@ import lombok.Data;
 /**
  * @author innerpeacez
  * @since 2019/1/7
+ * 统一返回值
  */
 @Data
 public class ResultBean<T> {
