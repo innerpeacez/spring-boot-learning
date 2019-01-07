@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class HelloController {
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    @ResponseBody
-    public String hello(@RequestParam String name) {
+    @GetMapping(value = "/hello")
+    public Object hello(@RequestParam String name) {
+        System.out.println(1/0);
         return "Hello " + name;
     }
 

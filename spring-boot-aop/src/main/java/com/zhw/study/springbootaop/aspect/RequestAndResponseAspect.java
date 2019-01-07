@@ -1,8 +1,9 @@
 package com.zhw.study.springbootaop.aspect;
 
+import com.zhw.study.springbootaop.common.ResultBean;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -23,7 +24,7 @@ import java.util.Arrays;
 public class RequestAndResponseAspect {
 
     @Before("com.zhw.study.springbootaop.config.CommonJoinPointConfiguration.requestAndResponseAspect()")
-    public void printRequestLog(ProceedingJoinPoint joinPoint) {
+    public void printRequestLog(JoinPoint joinPoint) {
         // 接收到请求，记录请求内容
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
@@ -37,11 +38,16 @@ public class RequestAndResponseAspect {
     }
 
     @Around("com.zhw.study.springbootaop.config.CommonJoinPointConfiguration.requestAndResponseAspect()")
-    public Object requestAndResponse(ProceedingJoinPoint joinPoint) throws Throwable {
-        long startTime = System.currentTimeMillis();
-        joinPoint.proceed();
-        long timeTaken = System.currentTimeMillis() - startTime;
-        log.info("Request processing time of {} is {} millisecond", joinPoint, timeTaken);
-        return null;
+    public ResultBean<Object> requestAndResponse(ProceedingJoinPoint joinPoint) throws Throwable {
+        try {
+            // 打印处理时间
+            long startTime = System.currentTimeMillis();
+            Object proceed = joinPoint.proceed();
+            long timeTaken = System.currentTimeMillis() - startTime;
+            log.info("Request processing time of {} is {} millisecond", joinPoint, timeTaken);
+            return new ResultBean<>(proceed);
+        } catch (Throwable e) {
+            return new ResultBean<>(e);
+        }
     }
 }
