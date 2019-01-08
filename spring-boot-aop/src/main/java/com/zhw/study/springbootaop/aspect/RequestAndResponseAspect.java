@@ -31,11 +31,11 @@ public class RequestAndResponseAspect {
         HttpServletRequest request = attributes.getRequest();
 
         // 记录下请求内容
-        log.info("URL : " + request.getRequestURL().toString());
-        log.info("HTTP_METHOD_TYPE : " + request.getMethod());
-        log.info("IP : " + request.getRemoteAddr());
-        log.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-        log.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
+        log.info("Request URL : " + request.getRequestURL().toString());
+        log.info("HTTP Method : " + request.getMethod());
+        log.info("Request IP : " + request.getRemoteAddr());
+        log.info("Method : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
+        log.info("Parameters : " + Arrays.toString(joinPoint.getArgs()));
     }
 
     @Around("com.zhw.study.springbootaop.config.CommonJoinPointConfiguration.requestAndResponseAspect()")
