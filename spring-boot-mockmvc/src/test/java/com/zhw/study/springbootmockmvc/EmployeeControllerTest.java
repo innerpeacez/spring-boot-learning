@@ -29,11 +29,10 @@ public class EmployeeControllerTest {
     @Test
     public void testPost() throws Exception {
         MvcResult mvcResult = mockMvc.perform(post("/employee") //设置请求方式为 post 及 url
-                .accept(MediaType.APPLICATION_JSON) // 设置请求参数以json的方式接收
-                .param("firstName", "wang") // 添加参数
+                .accept(MediaType.APPLICATION_JSON) // 设置入参方式为json
                 .param("lastName", "wu")
                 .param("email", "wangwu@xx.com")
-                .contentType(MediaType.APPLICATION_JSON)) // 设置返回值以json的方式
+                .contentType(MediaType.APPLICATION_JSON)) // 设置出参方式json
                 .andExpect(status().isOk()) // 设置请求的状态码为 200，可以添加一些期望的响应的结果判断
                 .andDo(print()) // print 方法打印出请求体，响应体
                 .andReturn(); // 获取返回值MvcResult
