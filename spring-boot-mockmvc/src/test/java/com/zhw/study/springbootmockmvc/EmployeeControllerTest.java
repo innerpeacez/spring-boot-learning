@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @since 2019/1/9
  */
 @RunWith(SpringRunner.class)
-@WebMvcTest(EmployeeController.class)
+@WebMvcTest(EmployeeController.class) // 需要测试的 Controller
 public class EmployeeControllerTest {
 
     @Autowired
@@ -28,15 +28,15 @@ public class EmployeeControllerTest {
 
     @Test
     public void testPost() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(post("/employee")
-                .accept(MediaType.APPLICATION_JSON)
-                .param("firstName", "wang")
+        MvcResult mvcResult = mockMvc.perform(post("/employee") //设置请求方式为 post 及 url
+                .accept(MediaType.APPLICATION_JSON) // 设置请求参数以json的方式接收
+                .param("firstName", "wang") // 添加参数
                 .param("lastName", "wu")
                 .param("email", "wangwu@xx.com")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andDo(print())
-                .andReturn();
+                .contentType(MediaType.APPLICATION_JSON)) // 设置返回值以json的方式
+                .andExpect(status().isOk()) // 设置请求的状态码为 200，可以添加一些期望的响应的结果判断
+                .andDo(print()) // print 方法打印出请求体，响应体
+                .andReturn(); // 获取返回值MvcResult
         System.out.println(mvcResult.getResponse().getContentAsString());
 
         testGetAll();
@@ -44,13 +44,12 @@ public class EmployeeControllerTest {
 
     @Test
     public void testGetOne() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/employee/1")
+        mockMvc.perform(get("/employee/1")
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andDo(print()) //
                 .andReturn(); // 获取返回值
-        System.out.println(mvcResult.getResponse().getContentAsString());
     }
 
     @Test
