@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: spring-boot-liquibase
+
+  datasource:
+    platform: h2
+    url: jdbc:h2:file:./h2/code-generator;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE # 访问的url ./h2/code-generator 数据保存在当前路径的h2文件夹下
+    username: root # 配置数据库用户名
+    password: root # 配置数据库密码
+    driver-class-name: org.h2.Driver # 配置数据库驱动
+
+  h2:
+    console:
+      path: /h2-console # h2 console 访问路径
+      enabled: true # 开启 console
+      settings:
+        web-allow-others: true # 允许远程访问
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/changelog-master.xml
+
+server:
+  port: 9000
+
