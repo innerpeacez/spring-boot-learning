@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: spring-boot-h2
+
+  datasource:
+    platform: h2
+
+  h2:
+    console:
+      path: /h2-console # h2 console 访问路径
+      enabled: true # 开启 console
+      settings:
+        web-allow-others: true # 允许远程访问
+
+
+server:
+  port: 9000
