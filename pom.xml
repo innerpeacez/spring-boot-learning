@@ -24,6 +24,9 @@
 		<module>spring-boot-admin</module>
 		<module>spring-boot-hikaricp</module>
 		<module>spring-boot-rabbitmq</module>
+		<module>spring-boot-h2</module>
+		<module>spring-boot-liquibase</module>
+		<module>spring-boot-mockmvc</module>
 	</modules>
 
 	<properties>
