@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    password: root
+    url: jdbc:mysql://192.168.17.128:3306/jpa_test?characterEncoding=utf8&useSSL=true
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
