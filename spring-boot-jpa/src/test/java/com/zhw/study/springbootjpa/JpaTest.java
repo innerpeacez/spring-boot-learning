@@ -26,8 +26,14 @@ public class JpaTest {
 
     @Test
     public void testSave() {
-        User user = new User(1L,"innerpeacez","coding");
+        User user = new User(4L,"innerpeacez","coding");
         User save = userRepository.save(user);
+        System.out.println(save);
+    }
+
+    @Test
+    public void testUpdate() {
+        Optional<User> save = userRepository.findById(2L);
         System.out.println(save);
     }
 
@@ -39,6 +45,13 @@ public class JpaTest {
 
     @Test
     public void testFindOne() {
+
+    }
+
+    @Test
+    public void testFindBy() {
+        List<User> innerpeacez = userRepository.findByName("innerpeacez");
+        System.out.println(innerpeacez);
     }
 
     @Test
