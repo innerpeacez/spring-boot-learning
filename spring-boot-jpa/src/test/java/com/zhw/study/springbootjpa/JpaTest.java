@@ -1,5 +1,6 @@
 package com.zhw.study.springbootjpa;
 
+import com.zhw.study.springbootjpa.pojo.IdCard;
 import com.zhw.study.springbootjpa.pojo.User;
 import com.zhw.study.springbootjpa.repository.UserRepository;
 import org.junit.Test;
@@ -26,7 +27,8 @@ public class JpaTest {
 
     @Test
     public void testSave() {
-        User user = new User(4L,"innerpeacez","coding");
+        IdCard idCard = new IdCard(1L, "123456");
+        User user = new User(4L, "innerpeacez", "coding", idCard);
         User save = userRepository.save(user);
         System.out.println(save);
     }
@@ -45,6 +47,11 @@ public class JpaTest {
 
     @Test
     public void testFindOne() {
+
+    }
+
+    @Test
+    public void testMultiEntity() {
 
     }
 
