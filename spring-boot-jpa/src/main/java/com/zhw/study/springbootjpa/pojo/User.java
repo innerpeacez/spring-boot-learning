@@ -1,6 +1,5 @@
 package com.zhw.study.springbootjpa.pojo;
 
-import com.sun.tracing.dtrace.ModuleName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +25,4 @@ public class User {
 
     private String hobby;
 
-    @OneToOne
-    private IdCard idCard;
 }

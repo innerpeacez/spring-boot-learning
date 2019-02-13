@@ -1,6 +1,10 @@
 
 spring:
   datasource:
+    password: tnbLMo2jXn
+    url: jdbc:mysql://192.168.10.196:30156/test?characterEncoding=utf8&useSSL=true
+    username: root
+#    driver-class-name: com.mysql.jdbc.Driver
     hikari:
       minimum-idle: 5 # 最小链接数
       maximum-pool-size: 15 # 最大连接数
@@ -10,17 +14,19 @@ spring:
       max-lifetime: 180000 # 最大生命周期（毫秒）
       connection-timeout: 30000 # 连接超时时间（毫秒）
       connection-test-query: SELECT 1 # 心跳检测
-    platform: h2
-    url: jdbc:h2:file:./h2-1/code-generator;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE # 访问的url ./h2/code-generator 数据保存在当前路径的h2文件夹下
-    username: root # 配置数据库用户名
-    password: root # 配置数据库密码
-    driver-class-name: org.h2.Driver # 配置数据库驱动
-  h2:
-    console:
-      path: /h2-console # h2 console 访问路径
-      enabled: true # 开启 console
-      settings:
-        web-allow-others: true # 允许远程访问
+      transaction-isolation:
+      validation-timeout:
+#    platform: h2
+#    url: jdbc:h2:file:./h2-1/code-generator;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE # 访问的url ./h2/code-generator 数据保存在当前路径的h2文件夹下
+#    username: root # 配置数据库用户名
+#    password: root # 配置数据库密码
+#    driver-class-name: org.h2.Driver # 配置数据库驱动
+#  h2:
+#    console:
+#      path: /h2-console # h2 console 访问路径
+#      enabled: true # 开启 console
+#      settings:
+#        web-allow-others: true # 允许远程访问
 
 
 server:

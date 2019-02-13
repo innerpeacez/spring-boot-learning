@@ -19,6 +19,5 @@ spring:
     enabled: true
     change-log: classpath:/db/changelog/changelog-master.xml
 
-server:
-  port: 9000
+
 
