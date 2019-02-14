@@ -4,7 +4,7 @@ spring:
     password: tnbLMo2jXn
     url: jdbc:mysql://192.168.10.196:30156/test?characterEncoding=utf8&useSSL=true
     username: root
-#    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     hikari:
       minimum-idle: 5 # 最小链接数
       maximum-pool-size: 15 # 最大连接数
@@ -14,8 +14,11 @@ spring:
       max-lifetime: 180000 # 最大生命周期（毫秒）
       connection-timeout: 30000 # 连接超时时间（毫秒）
       connection-test-query: SELECT 1 # 心跳检测
-      transaction-isolation:
-      validation-timeout:
+#    schema:
+#      - classpath*:schema.sql
+#    initialization-mode: always
+#      transaction-isolation:
+#      validation-timeout:
 #    platform: h2
 #    url: jdbc:h2:file:./h2-1/code-generator;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE # 访问的url ./h2/code-generator 数据保存在当前路径的h2文件夹下
 #    username: root # 配置数据库用户名
