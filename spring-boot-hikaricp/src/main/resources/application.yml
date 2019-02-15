@@ -16,6 +16,8 @@ spring:
       connection-test-query: SELECT 1 # 心跳检测
     schema:
       - classpath:schema.sql
+    data:
+      - classpath:data.sql
     initialization-mode: always
 #      transaction-isolation:
 #      validation-timeout:
