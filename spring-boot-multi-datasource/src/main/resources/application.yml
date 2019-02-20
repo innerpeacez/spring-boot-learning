@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    primary:
+      password: tnbLMo2jXn
+      jdbc-url: jdbc:mysql://192.168.10.196:30156/test?characterEncoding=utf8&useSSL=true
+      username: root
+      schema:
+        - classpath:schema.sql
+      data:
+        - classpath:data.sql
+      initialization-mode: always
+    secondary:
+      password: tnbLMo2jXn
+      jdbc-url: jdbc:mysql://192.168.10.196:30156/test2?characterEncoding=utf8&useSSL=true
+      username: root
+      schema:
+        - classpath:schema.sql
+      data:
+        - classpath:data.sql
+      initialization-mode: always
+  application:
+    name: multi-datasource
+
+server:
+  port: 8080

@@ -27,6 +27,7 @@
 		<module>spring-boot-h2</module>
 		<module>spring-boot-liquibase</module>
 		<module>spring-boot-mockmvc</module>
+		<module>spring-boot-multi-datasource</module>
 	</modules>
 
 	<properties>
