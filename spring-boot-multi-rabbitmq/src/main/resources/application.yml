@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: multi-rabbitmq
+  rabbitmq:
+    first:
+      host: 192.168.10.196
+      port: 31838
+      username: user
+      password: yqV6ozOam9
+    second:
+      host: 192.168.10.196
+      port: 31754
+      username: user
+      password: T4rLposoLk
