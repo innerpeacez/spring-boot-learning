@@ -10,6 +10,7 @@ public class Test2Sender extends MultiRabbitTemplate implements MessageSender {
 
     @Override
     public void send(String message) {
+        System.out.println(message);
         super.firstRabbitTemplate.convertAndSend("innerpeacez.queue",message);
     }
 }
