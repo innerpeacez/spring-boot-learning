@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: spring-boot-kafka
+
+server:
+  port: 8888
+
+sprkf
