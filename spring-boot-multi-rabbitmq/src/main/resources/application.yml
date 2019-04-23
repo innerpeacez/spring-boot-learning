@@ -4,11 +4,11 @@ spring:
   rabbitmq:
     first:
       host: 192.168.10.196
-      port: 31838
+      port: 31443
       username: user
-      password: yqV6ozOam9
+      password: OMHmqG9b95
     second:
       host: 192.168.10.196
-      port: 31754
+      port: 32260
       username: user
-      password: T4rLposoLk
+      password: 5f3leONVte

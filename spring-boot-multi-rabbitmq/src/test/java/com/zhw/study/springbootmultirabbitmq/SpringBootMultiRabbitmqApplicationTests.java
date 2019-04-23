@@ -1,30 +1,41 @@
 package com.zhw.study.springbootmultirabbitmq;
 
-import com.zhw.study.springbootmultirabbitmq.sender.TestSender;
+import com.zhw.study.springbootmultirabbitmq.commons.MultiRabbitTemplate;
+import com.zhw.study.springbootmultirabbitmq.sender.TestFirstSender;
+import com.zhw.study.springbootmultirabbitmq.sender.TestSecondSender;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringBootMultiRabbitmqApplicationTests {
+@Slf4j
+public class SpringBootMultiRabbitmqApplicationTests extends MultiRabbitTemplate {
+
+    @Autowired
+    private TestFirstSender firstSender;
+    @Autowired
+    private TestSecondSender secondSender;
 
     @Test
-    public void contextLoads() {
+    public void testFirstSender() {
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6);
+        integers.parallelStream().forEach(
+                (l) -> firstSender.send("innerpaecez1")
+        );
     }
 
-    @Autowired
-    private TestSender testSender;
-    @Autowired
-    private TestSender test2Sender;
-
     @Test
-    public void testSender() {
-        testSender.send("innerpaecez");
-        test2Sender.send("study rabbitmq");
-
-        System.out.println("发完消息啦");
+    public void testSecondSender() {
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6);
+        integers.parallelStream().forEach(
+                (l) -> secondSender.send("innerpaecez2")
+        );
     }
 }

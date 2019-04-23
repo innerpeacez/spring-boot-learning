@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-boot-redis
+
+  redis:
+    database:
+    host:
+    port:
+    password:

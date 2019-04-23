@@ -4,6 +4,10 @@ import lombok.Data;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 
+/**
+ * @author zhaihongwei
+ * @since 2019/3/11
+ */
 @Data
 public abstract class AbstractRabbitConfiguration {
 
@@ -13,11 +17,11 @@ public abstract class AbstractRabbitConfiguration {
     protected String password;
 
     protected ConnectionFactory connectionFactory() {
-        CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory();
-        cachingConnectionFactory.setHost(host);
-        cachingConnectionFactory.setPort(port);
-        cachingConnectionFactory.setUsername(username);
-        cachingConnectionFactory.setPassword(password);
-        return cachingConnectionFactory;
+        CachingConnectionFactory connectionFactory = new CachingConnectionFactory();
+        connectionFactory.setHost(host);
+        connectionFactory.setPort(port);
+        connectionFactory.setUsername(username);
+        connectionFactory.setPassword(password);
+        return connectionFactory;
     }
 }

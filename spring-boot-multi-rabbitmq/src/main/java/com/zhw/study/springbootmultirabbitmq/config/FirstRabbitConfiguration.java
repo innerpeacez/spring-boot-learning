@@ -11,6 +11,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+/**
+ * @author zhaihongwei
+ * @since 2019/3/8
+ */
+
 @Configuration
 @ConfigurationProperties("spring.rabbitmq.first")
 public class FirstRabbitConfiguration extends AbstractRabbitConfiguration {
@@ -27,9 +32,9 @@ public class FirstRabbitConfiguration extends AbstractRabbitConfiguration {
         return new RabbitTemplate(connectionFactory);
     }
 
-    @Bean(name = "firstSimpleFactory")
-    public SimpleRabbitListenerContainerFactory firstSimpleFactory(SimpleRabbitListenerContainerFactoryConfigurer configurer,
-                                                                    @Qualifier("firstConnectionFactory") ConnectionFactory connectionFactory) {
+    @Bean(name = "firstFactory")
+    public SimpleRabbitListenerContainerFactory firstFactory(SimpleRabbitListenerContainerFactoryConfigurer configurer,
+                                                             @Qualifier("firstConnectionFactory") ConnectionFactory connectionFactory) {
         SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
         configurer.configure(factory, connectionFactory);
         return factory;
@@ -40,3 +45,4 @@ public class FirstRabbitConfiguration extends AbstractRabbitConfiguration {
         return new RabbitAdmin(connectionFactory);
     }
 }
+
