@@ -2,7 +2,7 @@ package com.zhw.study.springbootmultirabbitmq.commons;
 
 
 /**
- * @author zhaihongwei
+ * @author innerpeacez
  * @since 2019/3/8
  */
 public interface MessageConsumer {

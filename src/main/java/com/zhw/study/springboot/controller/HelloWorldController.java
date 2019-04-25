@@ -3,7 +3,7 @@ package com.zhw.study.springboot.controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author: zhaihongwei
+ * @author: innerpeacez
  * @date: 2018/8/23 20:42
  * @Description:
  */

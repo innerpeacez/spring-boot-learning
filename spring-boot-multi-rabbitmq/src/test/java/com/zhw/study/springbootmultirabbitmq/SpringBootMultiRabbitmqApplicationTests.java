@@ -24,11 +24,14 @@ public class SpringBootMultiRabbitmqApplicationTests extends MultiRabbitTemplate
     private TestSecondSender secondSender;
 
     @Test
-    public void testFirstSender() {
-        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6);
-        integers.parallelStream().forEach(
-                (l) -> firstSender.send("innerpaecez1")
-        );
+    public void testFirstSender() throws InterruptedException {
+//        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6);
+//        integers.parallelStream().forEach(
+//                (l) -> firstSender.send("innerpaecez1")
+//        );
+//        Thread.sleep(1000 *10);
+
+        firstSender.send("innerpaecez1");
     }
 
     @Test

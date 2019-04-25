@@ -5,7 +5,7 @@ import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 
 /**
- * @author zhaihongwei
+ * @author innerpeacez
  * @since 2019/3/11
  */
 @Data

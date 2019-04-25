@@ -8,7 +8,7 @@ import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 
 /**
- * @author zhaihongwei
+ * @author innerpeacez
  * @since 2019/3/11
  */
 

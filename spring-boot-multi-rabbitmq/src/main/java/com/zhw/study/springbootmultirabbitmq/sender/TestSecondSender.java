@@ -5,7 +5,7 @@ import com.zhw.study.springbootmultirabbitmq.commons.MultiRabbitTemplate;
 import org.springframework.stereotype.Component;
 
 /**
- * @author zhaihongwei
+ * @author innerpeacez
  * @since 2019/3/11
  */
 @Component
