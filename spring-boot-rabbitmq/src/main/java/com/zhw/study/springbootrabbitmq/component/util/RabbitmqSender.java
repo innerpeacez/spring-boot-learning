@@ -21,6 +21,6 @@ public class RabbitmqSender {
         String message = "hello rabbitmq";
 
         // 发送消息到名为 hello 的队列中
-        this.amqpTemplate.convertAndSend("hello",message);
+        this.amqpTemplate.convertAndSend("hello", message);
     }
 }

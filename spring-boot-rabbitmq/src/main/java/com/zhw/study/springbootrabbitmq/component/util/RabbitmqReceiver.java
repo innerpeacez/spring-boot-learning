@@ -1,5 +1,6 @@
 package com.zhw.study.springbootrabbitmq.component.util;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
  * RabbitMq是注解驱动的
  */
 @RabbitListener(queues = "hello")
+@Slf4j
 public class RabbitmqReceiver {
 
     /**
@@ -22,7 +24,7 @@ public class RabbitmqReceiver {
      */
     @RabbitHandler
     public void process(String hello) {
-        System.out.printf("Rabbitmq: {}",hello);
+        log.info("Rabbitmq: {}", hello);
     }
 
 }

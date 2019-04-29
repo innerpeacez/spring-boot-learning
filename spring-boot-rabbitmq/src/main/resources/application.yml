@@ -3,7 +3,7 @@ spring:
     name: rabbitmq-demo
 
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: innerpeacez
-    password: innerpeacez
+    host: 192.168.10.196
+    port: 31443
+    username: user
+    password: OMHmqG9b95
