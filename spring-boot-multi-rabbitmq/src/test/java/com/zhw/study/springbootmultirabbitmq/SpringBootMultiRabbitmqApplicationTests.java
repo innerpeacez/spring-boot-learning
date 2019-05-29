@@ -24,21 +24,31 @@ public class SpringBootMultiRabbitmqApplicationTests extends MultiRabbitTemplate
     private TestSecondSender secondSender;
 
     @Test
-    public void testFirstSender() throws InterruptedException {
-//        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6);
-//        integers.parallelStream().forEach(
-//                (l) -> firstSender.send("innerpaecez1")
-//        );
-//        Thread.sleep(1000 *10);
-
-        firstSender.send("innerpaecez1");
+    public void testFirstSender() {
+        for (int i = 0; i < 100; i++) {
+            new Thread(() ->
+                    firstSender.rabbitmq1sender()
+            ).start();
+        }
+        try {
+            Thread.sleep(1000 * 10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     public void testSecondSender() {
-        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6);
-        integers.parallelStream().forEach(
-                (l) -> secondSender.send("innerpaecez2")
-        );
+        for (int i = 0; i < 100; i++) {
+            new Thread(() ->
+                    secondSender.rabbitmq2sender()
+            ).start();
+        }
+        try {
+            Thread.sleep(1000 * 10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }

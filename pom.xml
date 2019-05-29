@@ -33,6 +33,7 @@
         <module>spring-boot-jpa</module>
         <module>spring-boot-multi-rabbitmq</module>
         <module>spring-boot-redis</module>
+        <module>spring-boot-guava</module>
     </modules>
 
     <properties>
