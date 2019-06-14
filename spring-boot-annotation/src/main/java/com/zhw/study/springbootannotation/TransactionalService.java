@@ -14,7 +14,7 @@ import java.lang.annotation.*;
 @Service
 public @interface TransactionalService {
     @AliasFor(attribute = "value")
-    String name() default "";
+    String name() default "innerpeacez";
 
     @AliasFor("name")
     String value() default "";
