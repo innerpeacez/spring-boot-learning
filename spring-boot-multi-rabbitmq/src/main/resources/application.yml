@@ -3,12 +3,12 @@ spring:
     name: multi-rabbitmq
   rabbitmq:
     first:
-      host: 192.168.10.196
-      port: 31443
-      username: user
-      password: OMHmqG9b95
+      host: 192.168.10.76
+      port: 30509
+      username: admin
+      password: wowjoy
     second:
-      host: 192.168.10.196
-      port: 32260
-      username: user
-      password: 5f3leONVte
+      host: 192.168.10.76
+      port: 31938
+      username: admin
+      password: wowjoy

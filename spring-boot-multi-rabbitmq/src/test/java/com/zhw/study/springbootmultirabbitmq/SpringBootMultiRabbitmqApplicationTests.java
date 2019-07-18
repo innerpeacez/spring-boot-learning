@@ -23,6 +23,9 @@ public class SpringBootMultiRabbitmqApplicationTests extends MultiRabbitTemplate
     @Autowired
     private TestSecondSender secondSender;
 
+    /**
+     * 一百个线程向 First Rabbitmq 的 rabbitmq1 queue中发送一百条消息
+     */
     @Test
     public void testFirstSender() {
         for (int i = 0; i < 100; i++) {
@@ -37,6 +40,9 @@ public class SpringBootMultiRabbitmqApplicationTests extends MultiRabbitTemplate
         }
     }
 
+    /**
+     * 一百个线程向 Second Rabbitmq 的 rabbitmq2 queue中发送一百条消息
+     */
     @Test
     public void testSecondSender() {
         for (int i = 0; i < 100; i++) {
