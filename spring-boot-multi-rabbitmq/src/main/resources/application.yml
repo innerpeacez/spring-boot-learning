@@ -6,9 +6,9 @@ spring:
       host: 192.168.10.76
       port: 30509
       username: admin
-      password: wowjoy
+      password: 123456
     second:
       host: 192.168.10.76
       port: 31938
       username: admin
-      password: wowjoy
+      password: 123456
