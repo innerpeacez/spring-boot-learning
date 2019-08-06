@@ -19,7 +19,7 @@
 | spring-boot-liquibase        | SpringBoot 使用 liquibase 数据库版本控制工具 | <https://blog.csdn.net/zhwyj1019/article/details/86543703> | 完成     |
 | spring-boot-mockmvc          | SpringBoot 使用 mockmvc 测试                 | <https://blog.csdn.net/zhwyj1019/article/details/86165716> | 完成     |
 | spring-boot-multi-datasource |                                              |                                                            | 学习中   |
-| spring-boot-multi-rabbitmq   | SpringBoot 配置多源的RabbitMQ                |                                                            | 完成     |
+| spring-boot-multi-rabbitmq   | SpringBoot 配置多源的RabbitMQ                | <https://ipzgo.top/2019-07-18-Spring-Boot-%E9%85%8D%E7%BD%AE%E5%A4%9A%E6%BA%90%E7%9A%84rabbitmq/> | 完成     |
 | spring-boot-rabbitmq         | SpringBoot 使用 RabbitMQ                     |                                                            | 学习中   |
 | spring-boot-redis            | SpringBoot 使用 Redis                        |                                                            | 学习中   |
 |                              |                                              |                                                            |          |
