@@ -1,4 +1,4 @@
-package top.ipzgo.conditional;
+package top.ipzgo.conditional.conditionalonproperty;
 
 
 import org.springframework.boot.ApplicationArguments;
