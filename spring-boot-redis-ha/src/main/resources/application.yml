@@ -1,0 +1,15 @@
+spring:
+  redis:
+    database: 0
+    lettuce:
+      pool:
+        max-active: 300
+        min-idle: 20
+        max-wait: -1
+        max-idle: 100
+    sentinel:
+      master: mymaster
+      nodes: 192.168.10.196:30934
+
+server:
+  port: 8080
