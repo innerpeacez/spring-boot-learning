@@ -15,4 +15,5 @@ public class HelloController {
     public String hello(@RequestParam String name) {
         return "Hello " + name;
     }
+
 }
