@@ -6,7 +6,7 @@
     <groupId>com.zhw.study</groupId>
     <artifactId>spring-boot-learning</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>spring-boot-learning</name>
 
@@ -35,6 +35,12 @@
         <module>spring-boot-redis</module>
         <module>spring-boot-guava</module>
         <module>spring-boot-autoconfiguration</module>
+        <module>spring-boot-skywalking/sw-client-demo1</module>
+        <module>spring-boot-seata</module>
+        <module>spring-boot-redis-ha</module>
+        <module>spring-boot-conditional</module>
+        <module>spring-boot-properties</module>
+        <module>spring-boot-annotation</module>
     </modules>
 
     <properties>
