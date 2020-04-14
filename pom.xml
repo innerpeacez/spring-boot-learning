@@ -13,8 +13,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.7.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.2.6.RELEASE</version>
     </parent>
 
     <modules>
@@ -35,12 +34,11 @@
         <module>spring-boot-redis</module>
         <module>spring-boot-guava</module>
         <module>spring-boot-autoconfiguration</module>
-        <module>spring-boot-skywalking/sw-client-demo1</module>
-        <module>spring-boot-seata</module>
         <module>spring-boot-redis-ha</module>
         <module>spring-boot-conditional</module>
         <module>spring-boot-properties</module>
         <module>spring-boot-annotation</module>
+        <module>spring-boot-mybatis-plus</module>
     </modules>
 
     <properties>

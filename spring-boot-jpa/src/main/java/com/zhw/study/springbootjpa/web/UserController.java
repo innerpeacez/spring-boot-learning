@@ -1,6 +1,6 @@
 //package com.zhw.study.springbootjpa.web;
 //
-//import com.zhw.study.springbootjpa.pojo.User;
+//import com.zhw.study.springbootjpa.top.ipzgo.mybatisplus.pojo.User;
 //import com.zhw.study.springbootjpa.repository.UserRepository;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.web.bind.annotation.PostMapping;
