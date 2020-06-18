@@ -19,7 +19,7 @@ public class SampleTest {
 
     @Test
     public void testSelect() {
-        System.out.println(("----- selectAll method test ------"));
+        System.out.println(("----- selectAll method top.ipzgo.spring.ioc.lookup.test ------"));
         List<User> userList = userMapper.selectList(null);
         userList.forEach(System.out::println);
     }

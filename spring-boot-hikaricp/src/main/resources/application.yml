@@ -2,7 +2,7 @@
 spring:
   datasource:
     password: tnbLMo2jXn
-    url: jdbc:mysql://192.168.10.196:30156/test?characterEncoding=utf8&useSSL=true
+    url: jdbc:mysql://192.168.10.196:30156/top.ipzgo.spring.ioc.lookup.test?characterEncoding=utf8&useSSL=true
     username: root
 #    driver-class-name: com.mysql.jdbc.Driver
     hikari:

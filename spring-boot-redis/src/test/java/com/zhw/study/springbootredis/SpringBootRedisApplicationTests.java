@@ -22,16 +22,16 @@ public class SpringBootRedisApplicationTests {
     @Test
     // 使用 redisTemplate 存取字符串
     public void setAndGet() {
-        redisTemplate.opsForValue().set("test:string", "testValueString");
-        Assert.assertEquals("testValueString", redisTemplate.opsForValue().get("test:string"));
+        redisTemplate.opsForValue().set("top.ipzgo.spring.ioc.lookup.test:string", "testValueString");
+        Assert.assertEquals("testValueString", redisTemplate.opsForValue().get("top.ipzgo.spring.ioc.lookup.test:string"));
     }
 
     @Test
     // 使用 redisTemplate 存取对象
     public void setAndGetAUser() {
         User user = new User("innerpeacez", 10);
-        redisTemplate.opsForValue().set("test:Object", user);
-        Assert.assertEquals(user.getUsername(), ((User) redisTemplate.opsForValue().get("test:Object")).getUsername());
+        redisTemplate.opsForValue().set("top.ipzgo.spring.ioc.lookup.test:Object", user);
+        Assert.assertEquals(user.getUsername(), ((User) redisTemplate.opsForValue().get("top.ipzgo.spring.ioc.lookup.test:Object")).getUsername());
     }
 
     @Test

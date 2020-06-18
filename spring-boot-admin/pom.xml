@@ -40,8 +40,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-boot-starter-top.ipzgo.spring.ioc.lookup.test</artifactId>
+			<scope>top.ipzgo.spring.ioc.lookup.test</scope>
 		</dependency>
 	</dependencies>
 

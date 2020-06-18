@@ -11,7 +11,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedElement;
 import java.util.Set;
 
-@TransactionalService(name = "test")
+@TransactionalService(name = "top.ipzgo.spring.ioc.lookup.test")
 public class TransactionalServiceAnnotationMetadataBootstrap {
 
     public static void main(String[] args) throws IOException {
